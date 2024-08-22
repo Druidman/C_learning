@@ -1,24 +1,27 @@
 #include <stdio.h>
 #include <string.h>
 
-struct Player{
-    char name[12];
-    int score;
-};
+typedef int name[25];
+
+typedef struct {
+    char name[20];
+    int id;
+    long long password;
+} Player;
+
+
 
 int main(){
 
+    Player player1 = {"Mateusz",1,123454354353453453};
+
+    printf("NAME: %s\nID: %d\nPASSWORD: %lld\n",player1.name,player1.id,player1.password);
+
+    name names = {1,2,3,4,6,8};
     
-
-    struct Player player1;
-    struct Player player2;
-
-    strcpy(player1.name,"Mateusz");
-    strcpy(player2.name,"Krzychu");
-
-    printf("Player 1 name %s, PLayer 2 name %s",player1.name,player2.name);
-
-  
+    for (int i =0; i<sizeof(names)/4; i++){
+        printf("%d",names[i]);
+    }
 
     return 0;
 }
