@@ -18,8 +18,6 @@ void sort(int array[], int length){
                 array[i+1] = temp;
                 
             }
-            countt++;
-            
         }
         length-=1;
     
@@ -28,7 +26,7 @@ void sort(int array[], int length){
     for (int i=0; i<state;i++){
         printf("%d\n",array[i]);
     }
-    printf("\n This sort took %d list iterations",countt);
+  
     
 }
 
