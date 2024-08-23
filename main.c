@@ -1,20 +1,32 @@
 #include <stdio.h>
 
-void printA(int a){
-
+void delete_a_file(char name[10]){
+    if(remove(name) == 0){
+        printf("file was deleted succesfully!");
+    }
+    else{
+        printf("nah");
+    }
 }
 
 
 int main(){
 
-    char a = 'x';
-    char *pA = &a;
+    FILE *pFile = fopen("test.txt","r");
+    //check for existance
+    if (pFile==NULL){
+        printf("file not exists");
+    }
+    else{
 
-    
+        //read multiline
+        char buffer[255];
+        while (fgets(buffer,255,pFile) != NULL){
+            printf("%s",buffer);
+        }
 
-    printf("address of a: %p\n",pA);
-    printf("value of a: %c\n",a);
-    printf("value at address %c\n",*pA);
+        fclose(pFile);
+    }
 
     return 0;
 }
